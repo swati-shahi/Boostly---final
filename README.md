@@ -32,7 +32,6 @@ Boostly is a full-stack predictive productivity platform engineered to move beyo
 * **Infrastructure & Deployment**: Docker, Render Cloud
 
 ---
-
 ## System Architecture
 
 ```text
@@ -46,23 +45,50 @@ Boostly is a full-stack predictive productivity platform engineered to move beyo
        ├──► [ LangChain Agent ] (Zero-click NLP Decomposition & Cognitive Scoring)
        │
        └──► [ Scikit-Learn Engine ] (IsolationForest Anomaly Detector & Circadian Matcher)
+```
+
+---
 
 ## Getting Started Locally
+
 ### 1. Backend Service
 
+```bash
 # Clone the repository
 git clone [https://github.com/swati-shahi/Boostly---final.git](https://github.com/swati-shahi/Boostly---final.git)
 cd Boostly---final
 
 # Setup virtual environment
 python -m venv venv
-.\venv\Scripts\Activate.ps1   # On Windows (or source venv/bin/activate on Unix)
+.\venv\Scripts\Activate.ps1
 
 # Install dependencies and start server
 pip install -r backend/requirements.txt
 uvicorn app.main:app --reload --app-dir backend
+```
+
+*Interactive Swagger documentation available at `http://127.0.0.1:8000/docs`.*
 
 ### 2. Frontend Client
+
+```bash
 cd frontend
 npm install
 npm run dev
+```
+
+*Client runs locally at `http://localhost:5173`.*
+
+---
+
+## API Endpoints Overview
+
+| Method | Endpoint | Description |
+| :--- | :--- | :--- |
+| `GET` | `/api/v1/tasks` | Fetches all tasks and nested decomposed milestones |
+| `POST` | `/api/v1/tasks/quick-log` | Parses raw text via LangChain and assigns cognitive load |
+| `POST` | `/api/v1/tasks/rebalance-circadian` | Optimizes schedule against circadian peak windows |
+| `POST` | `/api/v1/telemetry/energy` | Ingests subjective energy ratings and hours worked |
+| `GET` | `/api/v1/analytics/burnout-assessment` | Evaluates burnout risk score via `IsolationForest` |
+
+
