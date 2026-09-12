@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Sparkles, Sun, BatteryMedium, ShieldCheck, Flame, Compass, ArrowRight, CheckCircle2, Moon } from "lucide-react";
 
-const API_BASE = "http://127.0.0.1:8000/api/v1";
+const API_BASE = import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:8000/api/v1";
 
 const CIRCADIAN_HOURS = [
   { hour: 8, energy: 3.2, tag: "Awakening" },
