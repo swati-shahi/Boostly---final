@@ -46,3 +46,21 @@ Boostly is a full-stack predictive productivity platform engineered to move beyo
        ├──► [ LangChain Agent ] (Zero-click NLP Decomposition & Cognitive Scoring)
        │
        └──► [ Scikit-Learn Engine ] (IsolationForest Anomaly Detector & Circadian Matcher)
+
+
+# Clone the repository
+git clone [https://github.com/swati-shahi/Boostly---final.git](https://github.com/swati-shahi/Boostly---final.git)
+cd Boostly---final
+
+# Setup virtual environment
+python -m venv venv
+.\venv\Scripts\Activate.ps1   # On Windows (or source venv/bin/activate on Unix)
+
+# Install dependencies and start server
+pip install -r backend/requirements.txt
+uvicorn app.main:app --reload --app-dir backend
+
+
+cd frontend
+npm install
+npm run dev
