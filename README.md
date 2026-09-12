@@ -47,6 +47,8 @@ Boostly is a full-stack predictive productivity platform engineered to move beyo
        │
        └──► [ Scikit-Learn Engine ] (IsolationForest Anomaly Detector & Circadian Matcher)
 
+## Getting Started Locally
+### 1. Backend Service
 
 # Clone the repository
 git clone [https://github.com/swati-shahi/Boostly---final.git](https://github.com/swati-shahi/Boostly---final.git)
@@ -60,7 +62,7 @@ python -m venv venv
 pip install -r backend/requirements.txt
 uvicorn app.main:app --reload --app-dir backend
 
-
+### 2. Frontend Client
 cd frontend
 npm install
 npm run dev
